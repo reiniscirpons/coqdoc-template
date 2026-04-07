@@ -2,8 +2,8 @@
 
 COQDOC_AUTO=coqdoc.css
 
-FILES=lesson_1 lesson_2
-FILES_HTML=$(addsuffix .html,$(FILES))
+FILES= $(wildcard *.v)
+FILES_HTML=$(patsubst %.v,%.html,$(FILES))
 
 all: $(FILES_HTML)
 
